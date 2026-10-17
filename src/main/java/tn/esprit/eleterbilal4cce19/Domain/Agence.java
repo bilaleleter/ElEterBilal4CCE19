@@ -1,11 +1,11 @@
 package tn.esprit.eleterbilal4cce19.Domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+
+import java.util.List;
+
 @Getter
 @Setter
 @ToString
@@ -21,4 +21,8 @@ public class Agence {
     String ville;
     String adresse;
     String telephone;
+    @OneToMany (mappedBy = "agence")
+    List<Vehicule> vehicules;
+    @OneToMany (mappedBy = "agence")
+    List<Employe> employees;
 }

@@ -1,14 +1,12 @@
 package tn.esprit.eleterbilal4cce19.Domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -24,4 +22,8 @@ public class Contrat {
     LocalDate dateSignature;
     BigDecimal montantTotal;
     boolean valide ;
+    @OneToOne (mappedBy = "contrat")
+    Reservation reservation;
+    @OneToMany (mappedBy = "contrat", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+    List<Paiement> paiements;
 }
