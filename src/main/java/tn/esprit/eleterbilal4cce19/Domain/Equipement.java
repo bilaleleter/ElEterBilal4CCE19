@@ -6,6 +6,7 @@ import lombok.experimental.FieldDefaults;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -20,6 +21,6 @@ public class Equipement {
     Long idEquipement;
     String libelle;
     @ManyToMany (mappedBy = "equipements")
-    List<Vehicule> vehicules;
+    Set<Vehicule> vehicules;
 
 }

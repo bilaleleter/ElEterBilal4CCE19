@@ -11,6 +11,7 @@ import lombok.experimental.FieldDefaults;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -37,7 +38,7 @@ public class Vehicule {
      @OneToMany (mappedBy = "vehicule")
      List<Reservation> reservations;
      @ManyToMany
-     List<Equipement> equipements = new ArrayList<>();
+     Set<Equipement> equipements ;
 
 }
 

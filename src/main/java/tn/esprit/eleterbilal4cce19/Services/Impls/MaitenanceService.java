@@ -1,0 +1,41 @@
+package tn.esprit.eleterbilal4cce19.Services.Impls;
+
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+import tn.esprit.eleterbilal4cce19.Domain.Maintenance;
+import tn.esprit.eleterbilal4cce19.Repositories.IMaintenanceRepository;
+import tn.esprit.eleterbilal4cce19.Services.IMaintenanceService;
+import tn.esprit.eleterbilal4cce19.Services.IPaiementService;
+
+import java.util.List;
+
+@RequiredArgsConstructor
+@Service
+public class MaitenanceService implements IMaintenanceService {
+    private final IMaintenanceRepository maintenanceRepository;
+
+    @Override
+    public Maintenance createMaintenance(Maintenance maintenance) {
+        return maintenanceRepository.save(maintenance);
+    }
+
+    @Override
+    public Maintenance updateMaintenance(Maintenance maintenance) {
+        return maintenanceRepository.save(maintenance);
+    }
+
+    @Override
+    public void deleteMaintenance(Maintenance maintenance) {
+        maintenanceRepository.delete(maintenance);
+    }
+
+    @Override
+    public Maintenance getMaintenanceById(Long id) {
+        return maintenanceRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<Maintenance> getAllMaintenances() {
+        return maintenanceRepository.findAll();
+    }
+}
