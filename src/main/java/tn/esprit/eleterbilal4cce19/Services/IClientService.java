@@ -7,7 +7,8 @@ import java.util.List;
 public interface IClientService {
     Client createClient(Client client);
     Client updateClient(Client client);
-    void deleteClient(Client client);
+    void deleteClient(Long id);
     Client getClientById(Long id);
     List<Client> getAllClients();
+
 }

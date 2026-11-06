@@ -7,11 +7,12 @@ import tn.esprit.eleterbilal4cce19.Repositories.IClientRepository;
 import tn.esprit.eleterbilal4cce19.Services.IClientService;
 
 import java.util.List;
-
 @RequiredArgsConstructor
 @Service
 public class ClientService implements IClientService {
+
     private final IClientRepository clientRepository;
+
 
     @Override
     public Client createClient(Client client) {
@@ -24,8 +25,8 @@ public class ClientService implements IClientService {
     }
 
     @Override
-    public void deleteClient(Client client) {
-        clientRepository.delete(client);
+    public void deleteClient(Long id) {
+        clientRepository.deleteById(id);
     }
 
     @Override

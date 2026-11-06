@@ -7,7 +7,8 @@ import java.util.List;
 public interface IMaintenanceService {
     Maintenance createMaintenance(Maintenance maintenance);
     Maintenance updateMaintenance(Maintenance maintenance);
-    void deleteMaintenance(Maintenance maintenance);
+    void deleteMaintenance(Long id);
     Maintenance getMaintenanceById(Long id);
     List<Maintenance> getAllMaintenances();
+
 }

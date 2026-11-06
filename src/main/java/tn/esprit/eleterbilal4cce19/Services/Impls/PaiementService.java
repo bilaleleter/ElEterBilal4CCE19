@@ -5,14 +5,14 @@ import org.springframework.stereotype.Service;
 import tn.esprit.eleterbilal4cce19.Domain.Paiement;
 import tn.esprit.eleterbilal4cce19.Repositories.IPaiementRepository;
 import tn.esprit.eleterbilal4cce19.Services.IPaiementService;
-import tn.esprit.eleterbilal4cce19.Services.IReservationService;
 
 import java.util.List;
-
 @RequiredArgsConstructor
 @Service
 public class PaiementService implements IPaiementService {
+
     private final IPaiementRepository paiementRepository;
+
 
     @Override
     public Paiement createPaiement(Paiement paiement) {
@@ -25,8 +25,8 @@ public class PaiementService implements IPaiementService {
     }
 
     @Override
-    public void deletePaiement(Paiement paiement) {
-        paiementRepository.delete(paiement);
+    public void deletePaiement(Long id) {
+        paiementRepository.deleteById(id);
     }
 
     @Override

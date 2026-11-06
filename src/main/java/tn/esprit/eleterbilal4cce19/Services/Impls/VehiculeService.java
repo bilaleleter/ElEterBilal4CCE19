@@ -25,8 +25,8 @@ public class VehiculeService implements IVehiculeService {
     }
 
     @Override
-    public void deleteVehicule(Vehicule vehicule) {
-        vehiculeRepository.delete(vehicule);
+    public void deleteVehicule(Long id) {
+        vehiculeRepository.deleteById(id);
     }
 
     @Override

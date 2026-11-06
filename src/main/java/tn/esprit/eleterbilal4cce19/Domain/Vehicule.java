@@ -1,5 +1,6 @@
 package tn.esprit.eleterbilal4cce19.Domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -32,11 +33,13 @@ public class Vehicule {
      BigDecimal tarifJournalier;
      @Enumerated(EnumType.STRING)
      StatutVehicule statut ;
-
+     @JsonIgnore
      @ManyToOne
      Agence agence;
+     @JsonIgnore
      @OneToMany (mappedBy = "vehicule")
      List<Reservation> reservations;
+     @JsonIgnore
      @ManyToMany
      Set<Equipement> equipements ;
 

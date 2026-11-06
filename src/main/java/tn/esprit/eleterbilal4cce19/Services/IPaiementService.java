@@ -7,7 +7,8 @@ import java.util.List;
 public interface IPaiementService {
     Paiement createPaiement(Paiement paiement);
     Paiement updatePaiement(Paiement paiement);
-    void deletePaiement(Paiement paiement);
+    void deletePaiement(Long id);
     Paiement getPaiementById(Long id);
     List<Paiement> getAllPaiements();
+
 }

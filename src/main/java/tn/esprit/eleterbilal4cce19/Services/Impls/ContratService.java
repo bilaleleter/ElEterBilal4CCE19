@@ -7,11 +7,12 @@ import tn.esprit.eleterbilal4cce19.Repositories.IContratRepository;
 import tn.esprit.eleterbilal4cce19.Services.IContratService;
 
 import java.util.List;
-
 @RequiredArgsConstructor
 @Service
 public class ContratService implements IContratService {
+
     private final IContratRepository contratRepository;
+
 
     @Override
     public Contrat createContrat(Contrat contrat) {
@@ -24,8 +25,8 @@ public class ContratService implements IContratService {
     }
 
     @Override
-    public void deleteContrat(Contrat contrat) {
-        contratRepository.delete(contrat);
+    public void deleteContrat(Long id) {
+        contratRepository.deleteById(id);
     }
 
     @Override

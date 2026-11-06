@@ -7,11 +7,12 @@ import tn.esprit.eleterbilal4cce19.Repositories.IReservationRepository;
 import tn.esprit.eleterbilal4cce19.Services.IReservationService;
 
 import java.util.List;
-
 @RequiredArgsConstructor
 @Service
 public class ReservationService implements IReservationService {
+
     private final IReservationRepository reservationRepository;
+
 
     @Override
     public Reservation createReservation(Reservation reservation) {
@@ -24,8 +25,8 @@ public class ReservationService implements IReservationService {
     }
 
     @Override
-    public void deleteReservation(Reservation reservation) {
-        reservationRepository.delete(reservation);
+    public void deleteReservation(Long id) {
+        reservationRepository.deleteById(id);
     }
 
     @Override
@@ -37,5 +38,4 @@ public class ReservationService implements IReservationService {
     public List<Reservation> getAllReservations() {
         return reservationRepository.findAll();
     }
-
 }

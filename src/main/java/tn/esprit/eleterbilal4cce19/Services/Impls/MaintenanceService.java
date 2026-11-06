@@ -5,14 +5,14 @@ import org.springframework.stereotype.Service;
 import tn.esprit.eleterbilal4cce19.Domain.Maintenance;
 import tn.esprit.eleterbilal4cce19.Repositories.IMaintenanceRepository;
 import tn.esprit.eleterbilal4cce19.Services.IMaintenanceService;
-import tn.esprit.eleterbilal4cce19.Services.IPaiementService;
 
 import java.util.List;
-
 @RequiredArgsConstructor
 @Service
-public class MaitenanceService implements IMaintenanceService {
+public class MaintenanceService implements IMaintenanceService {
+
     private final IMaintenanceRepository maintenanceRepository;
+
 
     @Override
     public Maintenance createMaintenance(Maintenance maintenance) {
@@ -25,8 +25,8 @@ public class MaitenanceService implements IMaintenanceService {
     }
 
     @Override
-    public void deleteMaintenance(Maintenance maintenance) {
-        maintenanceRepository.delete(maintenance);
+    public void deleteMaintenance(Long id) {
+        maintenanceRepository.deleteById(id);
     }
 
     @Override

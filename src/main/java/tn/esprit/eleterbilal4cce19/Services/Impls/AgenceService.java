@@ -7,11 +7,12 @@ import tn.esprit.eleterbilal4cce19.Repositories.IAgenceRepository;
 import tn.esprit.eleterbilal4cce19.Services.IAgenceService;
 
 import java.util.List;
-
 @RequiredArgsConstructor
 @Service
 public class AgenceService implements IAgenceService {
+
     private final IAgenceRepository agenceRepository;
+
 
     @Override
     public Agence createAgence(Agence agence) {
@@ -24,8 +25,8 @@ public class AgenceService implements IAgenceService {
     }
 
     @Override
-    public void deleteAgence(Agence agence) {
-        agenceRepository.delete(agence);
+    public void deleteAgence(Long id) {
+        agenceRepository.deleteById(id);
     }
 
     @Override

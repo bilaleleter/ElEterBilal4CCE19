@@ -7,11 +7,12 @@ import tn.esprit.eleterbilal4cce19.Repositories.IEquipementRepository;
 import tn.esprit.eleterbilal4cce19.Services.IEquipementService;
 
 import java.util.List;
-
 @RequiredArgsConstructor
 @Service
 public class EquipementService implements IEquipementService {
+
     private final IEquipementRepository equipementRepository;
+
 
     @Override
     public Equipement createEquipement(Equipement equipement) {
@@ -24,8 +25,8 @@ public class EquipementService implements IEquipementService {
     }
 
     @Override
-    public void deleteEquipement(Equipement equipement) {
-        equipementRepository.delete(equipement);
+    public void deleteEquipement(Long id) {
+        equipementRepository.deleteById(id);
     }
 
     @Override
